@@ -1,0 +1,13 @@
+{
+    "name": "luffyzhao/zd-near",
+    "authors": [
+        {
+            "name": "luffyzhao",
+            "email": "luffyzhao@vip.126.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"luffyzhao\\nears\\": "src/"}
+    }
+}
