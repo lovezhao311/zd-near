@@ -34,6 +34,6 @@ $data = [
 
 $d = new Near($data);
 
-$d->setXKey(0)->setYKey(1)->setClusterCount(6)->solve();
+$d->setOriginalReference([113.927889, 22.518047])->setXKey(0)->setYKey(1)->setClusterCount(6)->solve();
 
 print_r($d->toArray());

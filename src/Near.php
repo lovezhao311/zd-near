@@ -23,6 +23,12 @@ class Near
         $this->_data = $data;
     }
 
+    public function setOriginalReference(array $reference)
+    {
+        $this->_originalReference = $reference;
+        return $this;
+    }
+
     public function setClusterCount(int $count)
     {
         $this->_clusterCount = $count;
