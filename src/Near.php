@@ -108,8 +108,14 @@ class Near
 
     private function _distance($loc, $loc2)
     {
-        $loc = array_map([$this, '_pi'], $loc);
-        $loc2 = array_map([$this, '_pi'], $loc2);
+        $loc = array_map([$this, '_pi'], [
+            $this->xKey => $loc[$this->xKey],
+            $this->yKey => $loc[$this->yKey],
+        ]);
+        $loc2 = array_map([$this, '_pi'], [
+            $this->xKey => $loc[$this->xKey],
+            $this->yKey => $loc[$this->yKey],
+        ]);
 
         $calcLongitude = $loc[$this->yKey] - $loc2[$this->yKey];
         $calcLatitude = $loc[$this->xKey] - $loc2[$this->xKey];
@@ -133,7 +139,7 @@ class Near
     {
         $clusters = [];
         foreach ($this->_clusters as $key => $value) {
-            $clusters[$key] = $value->toArray();
+            $clusters[$key]['data'] = $value->toArray();
         }
         return $clusters;
     }
